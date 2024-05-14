@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Graphs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #graph-container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        function showGraph() {
+            var selectedModel = document.getElementById('model').value;
+            var graphContainer = document.getElementById('graph-container');
+            var graphs = {
+                'Model 1': 'graph1.png',
+                'Model 2': 'graph2.png',
+                'Model 3': 'graph3.png'
+            };
+            graphContainer.innerHTML = '<img src="' + graphs[selectedModel] + '" alt="Graph for ' + selectedModel + '">';
+        }
+    </script>
+</head>
+<body>
+    <h1>Model Graphs</h1>
+    <form>
+        <label for="model">Select Model:</label>
+        <select name="model" id="model" onchange="showGraph()">
+            <option value="Model 1">Model 1</option>
+            <option value="Model 2">Model 2</option>
+            <option value="Model 3">Model 3</option>
+        </select>
+    </form>
+    <div id="graph-container">
+        <!-- Graph will be displayed here -->
+    </div>
+</body>
+</html>
